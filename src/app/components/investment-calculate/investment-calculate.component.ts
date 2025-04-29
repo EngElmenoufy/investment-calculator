@@ -1,15 +1,15 @@
 import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CalculateInvestmentService } from '../../calculate-investment.service';
 
 @Component({
   selector: 'app-investment-calculate',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './investment-calculate.component.html',
   styleUrl: './investment-calculate.component.css',
 })
 export class InvestmentCalculateComponent {
-  @Output() calculate = new EventEmitter();
+  // @Output() calculate = new EventEmitter();
+  constructor(private calculateInvestment: CalculateInvestmentService) {}
 
   initial = signal('');
   annual = signal('');
@@ -24,6 +24,8 @@ export class InvestmentCalculateComponent {
       duration: Number(this.duration()),
     };
 
-    this.calculate.emit(data);
+    this.calculateInvestment.calculate(data);
+
+    // this.calculate.emit(data);
   }
 }

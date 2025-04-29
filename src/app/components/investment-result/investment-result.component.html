@@ -1,3 +1,6 @@
+@if (!data.length) {
+<p>Enter Your values to calculate</p>
+}@else {
 <table>
   <thead>
     <tr>
@@ -12,12 +15,13 @@
 
     @for (row of data; track row.year) {
     <tr>
-      <th>{{row.year | number: "1.0-0"}}</th>
-      <th>${{row.investment | number: "1.2-2"}}</th>
-      <th>${{row.interest | number: "1.2-2"}}</th>
-      <th>${{row.totalInterest | number: "1.2-2"}}</th>
-      <th>${{row.investedCapital | number: "1.2-2"}}</th>
+      <th>{{row.year | currency}}</th>
+      <th>${{row.investment | currency}}</th>
+      <th>${{row.interest | currency}}</th>
+      <th>${{row.totalInterest | currency}}</th>
+      <th>${{row.investedCapital | currency}}</th>
     </tr>
     }
   </tbody>
 </table>
+}
