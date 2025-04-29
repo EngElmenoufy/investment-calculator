@@ -1,5 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
-import { CalculateInvestmentService } from '../../services/calculate-investment.service';
+import { Component, Input } from '@angular/core';
 import { InvestmentResult } from '../../model/investment-result.model';
 import { DecimalPipe } from '@angular/common';
 

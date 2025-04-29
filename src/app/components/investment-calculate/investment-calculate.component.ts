@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
-import { CalculateInvestmentService } from '../../services/calculate-investment.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class InvestmentCalculateComponent {
   @Output() calculate = new EventEmitter();
-  private calculateService = inject(CalculateInvestmentService);
 
   initial = signal('');
   annual = signal('');
