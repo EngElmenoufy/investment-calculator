@@ -1,0 +1,7 @@
+<app-header />
+
+<app-investment-calculate (calculate)="onCalculate($event)" />
+
+@if(resultData?.length) {
+<app-investment-result [data]="resultData" />
+}
